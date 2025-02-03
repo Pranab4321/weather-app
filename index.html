@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="heading"><h2>Weather App</h2></div>
+        <div class="heading">
+          <div class="show-weather">
+            <div class="weather-info">
+              <p id="city-name">Delhi</p>
+              <p id="temperature">33'C</p>
+              <p id="weather-description">This Weather is Sunny</p>
+            </div>
+          </div>
+        </div>
+        <div class="search-elements">
+          <input type="text" placeholder="Search Places Here" />
+        </div>
+        <div class="c-f">
+          <select id="unit">
+            <option value="metric">Celsius</option>
+            <option value="imperial">Fahrenheit</option>
+          </select>
+        </div>
+        <button>Search</button>
+      </div>
+    </div>
+    <script src="js/app.js"></script>
+  </body>
+</html>
