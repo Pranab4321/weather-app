@@ -3,25 +3,26 @@ body{
 }
 
 .card{
-    background-color: grey;
+    /* background-color: grey; */
+    background: linear-gradient(45deg, pink, lightblue, white);
     width: 600px;
     height: 400px;
     border-radius: 10px;
-    box-shadow: 10px 20px 10px rgba(0, 0, 0, 0.8);
+    box-shadow: 10px 20px 10px rgba(0, 0, 0, 0.7);
 }
 
 .show-weather .weather-info{
-    background-color: white;
+    /* background-color: rgb(163, 217, 215); */
     width: 450px;
+    height: 130px;
     border-radius: 7px;
     padding: 7px;
-    border: 1px solid black;
+    border: 1px solid rgb(55, 61, 60);
 }
 
 .show-weather .weather-info p{
-    margin-left: 130px;
-    font-size: 100px;
-    color: blue;
+    margin-left: 100px;
+    color: black;
     font-weight: bolder;
 }
 
@@ -47,11 +48,15 @@ select{
 }
 
 .show-weather .weather-info p{
-    font-size: 16px;
+    font-size: 20px;
 }
 
 .container{
-    background-color: white;
+    background-image: url(../image/bgSunny.avif);
+    background-size: cover;
+    background-position: center
+    ;
+    /* background-color: blue; */
     display: flex;
     width: 100%;
     height: 100vh;
