@@ -8,27 +8,72 @@
   </head>
   <body>
     <div class="container">
-      <div class="card">
-        <div class="heading"><h2>Weather App</h2></div>
-        <div class="heading">
-          <div class="show-weather">
-            <div class="weather-info">
-              <p id="city-name"></p>
-              <p id="temperature"></p>
-              <p id="weather-description"></p>
+      <div class="weather_data">
+        <div class="card">
+          <div class="heading"><h2>Weather App</h2></div>
+          <div class="heading">
+            <div class="show-weather">
+              <div class="weather-info">
+                <p id="city-name"></p>
+                <p id="temperature"></p>
+                <p id="weather-description"></p>
+              </div>
+            </div>
+          </div>
+          <div class="search-elements">
+            <input
+              id="city-input"
+              type="text"
+              placeholder="Search Places Here"
+            />
+
+            <select id="unit">
+              <option value="metric">Celsius</option>
+              <option value="imperial">Fahrenheit</option>
+            </select>
+
+            <button id="search-btn">Search</button>
+          </div>
+
+          <div class="days">
+            <div class="day-card">
+              <div class="day-date">Day 1</div>
+              <div class="day-weather-icon">
+                <img
+                  src="image/sunny.png"
+                  alt="Weather Icon"
+                  style="display: none"
+                />
+              </div>
+              <div class="day-temperature">--°C</div>
+              <div class="day-description">Search a city to see forecast</div>
+            </div>
+            <div class="day-card">
+              <div class="day-date">Day 2</div>
+              <div class="day-weather-icon">
+                <img
+                  src="image/sunny.png"
+                  alt="Weather Icon"
+                  style="display: none"
+                />
+              </div>
+              <div class="day-temperature">--°C</div>
+              <div class="day-description">Search a city to see forecast</div>
+            </div>
+            <div class="day-card">
+              <div class="day-date">Day 3</div>
+              <div class="day-weather-icon">
+                <img
+                  src="image/sunny.png"
+                  alt="Weather Icon"
+                  style="display: none"
+                />
+              </div>
+              <div class="day-temperature">--°C</div>
+              <div class="day-description">Search a city to see forecast</div>
             </div>
           </div>
         </div>
-        <div class="search-elements">
-          <input id="city-input" type="text" placeholder="Search Places Here" />
-        </div>
-        <div class="c-f">
-          <select id="unit">
-            <option value="metric">Celsius</option>
-            <option value="imperial">Fahrenheit</option>
-          </select>
-        </div>
-        <button id="search-btn">Search</button>
       </div>
     </div>
     <script src="js/app.js"></script>

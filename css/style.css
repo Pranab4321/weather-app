@@ -1,57 +1,60 @@
-body{
+body {
     margin: 0px;
-}
-
-.card{
-    /* background-color: grey; */
+  }
+  
+  .card {
     background: linear-gradient(45deg, pink, lightblue, white);
-    width: 600px;
-    height: 400px;
+    width: auto;
+    min-width: 10vw;
+    height: auto;
     border-radius: 10px;
     box-shadow: 10px 20px 10px rgba(0, 0, 0, 0.7);
-}
-
-.show-weather .weather-info{
-    /* background-color: rgb(163, 217, 215); */
+    margin-top: 10px;
+  }
+  
+  .show-weather .weather-info {
     width: 450px;
     height: 130px;
     border-radius: 7px;
     padding: 7px;
     border: 1px solid rgb(55, 61, 60);
-}
-
-.show-weather .weather-info p{
+  }
+  
+  .show-weather .weather-info p {
     margin-left: 100px;
     color: black;
     font-weight: bolder;
-}
-
-.heading{
+  }
+  
+  .heading {
     display: flex;
     justify-content: center;
-} 
-
-.search-elements input, .c-f select, button {
-   padding: 10px;
-   border-radius: 10px;
-   margin: 5px;
-   border: 1px solid black;
-}
-
-button{
+  }
+  
+  .search-elements input,
+  .c-f select,
+  button {
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px;
+    border: 1px solid black;
+  }
+  
+  button {
     font-size: 20px;
-}
-
-select{
+  }
+  
+  select {
     border-radius: 10px;
     font-size: 22px;
-}
-
-.show-weather .weather-info p{
+    padding: 15px;
+  }
+  
+  .show-weather .weather-info p {
     font-size: 20px;
-}
-
-.container{
+  }
+  
+  .container {
     background-image: url(../image/bgSunny.avif);
     background-size: cover;
     background-position: center;
@@ -60,21 +63,92 @@ select{
     height: 100vh;
     justify-content: center;
     align-items: center;
-}
-
-#city-input{
+  }
+  
+  #city-input {
     font-size: 25px;
-}
-
-@media (max-width: 600px) {
-  .container .show-weather .weather-info{
-    width: 350px;
-    margin-left: 14px;
-    margin-right: 14px;
   }
-
-  .container .card{
-    margin: 15px;
+  
+  .days {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
   }
+  
+  .day-card {
+    background: rgba(175, 220, 231, 0.9);
+    border-radius: 15px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    backdrop-filter: blur(5px);
+  }
+  
+  .day-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .day-date {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .day-weather-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+    width: 100%;
+  }
+  
+  .day-weather-icon img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .day-temperature {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 10px 0;
+  }
+  
+  .day-description {
+    font-size: 1em;
+    color: #666;
+    text-transform: capitalize;
+  }
+  
+  @media (max-width: 768px) {
+    .days {
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
     }
-    
+  
+    .day-card {
+      width: 80%;
+      max-width: 300px;
+    }
+  
+    .container .show-weather .weather-info {
+      width: 350px;
+      margin-left: 14px;
+      margin-right: 14px;
+    }
+  
+    .container .card {
+      margin: 15px;
+    }
+  }
+  
