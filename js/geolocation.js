@@ -1,5 +1,6 @@
  
     const x = document.getElementById("weather-info");
+    const y = document.getElementById("coords");
     const apiKey = "443ab80610e13ff973f3a07e97125163";
 
     // Get location button
@@ -14,6 +15,7 @@
     function success(position) {
       const lat = position.coords.latitude;
       const lon = position.coords.longitude;
+      y.innerHTML = "Longitude : "+ lon + "<br>Latitude : "+lat;
       fetchWeatherByCoords(lat, lon);
     }
 
@@ -23,6 +25,7 @@
 
     // Fetch weather by city name
     document.getElementById("search-btn").addEventListener("click", function () {
+      y.innerHTML = ""
       const city = document.getElementById("city-input").value.trim();
       if (!city) {
         alert("Please enter a city name");
