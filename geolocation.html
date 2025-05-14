@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
     <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
+    <link rel="stylesheet" href="../css/geolocation.css">
+</head>
+<body>
     <div class="container">
       <div class="weather_data">
         <div class="card">
@@ -33,6 +34,7 @@
             </select>
 
             <button id="search-btn">Search</button>
+        <button style="background-color: rgb(127, 141, 127);" onclick="getLocation()">My Location</button>
 
           </div>
 
@@ -78,5 +80,7 @@
       </div>
     </div>
     <script src="js/app.js"></script>
+    <script src="../js/geolocation.js"></script>
   </body>
 </html>
+

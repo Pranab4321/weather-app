@@ -9,6 +9,9 @@ document.getElementById("search-btn").addEventListener("click", function () {
 
   console.log("City entered:", city);
 
+  // Adding a button to show my location
+
+
   // Simulate weather data instead of API call
   async function simulateWeather() {
     try {
