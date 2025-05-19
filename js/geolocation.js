@@ -40,9 +40,11 @@
         const response = await fetch(apiURL);
         if (!response.ok) throw new Error("City not found");
         const data = await response.json();
+        console.log(data);
         const lat = data.coord.lat;
         const lon = data.coord.lon;
-        updateCurrentWeather(data);
+        updateCurrentWeather(data); //Displaying the temperature
+        setHumidityPressure(data);  // Displaying Humidity and Pressure
         fetchForecast(lat, lon);
       } catch (err) {
         alert("City not found. Please check the city name and try again.");
@@ -55,7 +57,8 @@
       try {
         const response = await fetch(apiURL);
         const data = await response.json();
-        updateCurrentWeather(data);
+        updateCurrentWeather(data);  //Displaying the temperature
+        setHumidityPressure(data);  // Displaying Humidity and Pressure
         fetchForecast(lat, lon);
       } catch (err) {
         alert("Error fetching weather from coordinates.");
@@ -63,11 +66,13 @@
       }
     }
 
+    // fetching data using lat and lon
     async function fetchForecast(lat, lon) {
       const apiurl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`;
       try {
         const newresponse = await fetch(apiurl);
         const fetchData = await newresponse.json();
+        console.log(fetchData);
         updateForecast(fetchData);
       } catch (err) {
         alert("Error fetching forecast data.");
@@ -75,6 +80,7 @@
       }
     }
 
+    // Function for toggling temperature "C" and "F"
     function updateCurrentWeather(data) {
       const unit = document.getElementById("unit").value;
       const currentTemp = convertTemp(data.main.temp, unit);
@@ -82,7 +88,13 @@
       document.getElementById("temperature").innerText = `Temperature: ${currentTemp}°${unit === "metric" ? "C" : "F"}`;
       document.getElementById("weather-description").innerText = "Weather Description: " + data.weather[0].description;
     }
+    //Function for Humidity and Pressure
+    function setHumidityPressure(data){
+      document.getElementById("humidity").innerText = `Humidity: ${data.main.humidity} %`;
+      document.getElementById("pressure").innerText = `Pressure: ${data.main.pressure} hPa`;
+    }
 
+    // function to display multiple days weather forcasting
     function updateForecast(fetchData) {
       const forecastIndices = [8, 16, 24];
       const dayCards = document.querySelectorAll(".day-card");
@@ -103,6 +115,7 @@
       });
     }
 
+    // Function to show dates
     function formatDate(dt) {
       const date = new Date(dt * 1000);
       return date.toLocaleDateString("en-US", {
@@ -111,13 +124,14 @@
         day: "numeric",
       });
     }
-
+    //Function for converting the temperature from kelvin to C and F
     function convertTemp(kelvin, unit) {
       return unit === "metric"
         ? Math.round(kelvin - 273.15)
         : Math.round((kelvin - 273.15) * 9 / 5 + 32);
     }
 
+    // All Weather icon displaying function
     function getWeatherIcon(weatherCode) {
       const iconMap = {
         "01": "sunny.png",
@@ -133,7 +147,8 @@
       const code = weatherCode.substring(0, 2);
       return iconMap[code] || "sunny.png";
     }
-
+    
+    //Function to hide icons
     function hideIcons() {
       document.querySelectorAll(".day-weather-icon img").forEach((img) => {
         img.style.display = "none";
