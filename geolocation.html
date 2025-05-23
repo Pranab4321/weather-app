@@ -2,12 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
     <title>Weather App</title>
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/favcities.css" />
-</head>
-<body>
+    <link rel="stylesheet" href="./css/responsive.css" />
+  </head>
+  <body>
     <div class="container">
       <div class="weather_data">
         <div class="card">
@@ -37,18 +41,22 @@
             </select>
 
             <button id="search-btn">Search</button>
-            <button style="background-color: rgb(163, 172, 163);" onclick="getLocation()">My Location</button>
+            <button
+              style="background-color: rgb(163, 172, 163)"
+              onclick="getLocation()"
+            >
+              My Location
+            </button>
             <!-- new addition -->
             <button id="save-favorite-btn">Save to Favorites</button>
-
           </div>
 
-<!-- New implementation here -->
-        <div class="favorites-section">
+          <!-- New implementation here -->
+          <div class="favorites-section">
             <h3>Favorite Cities</h3>
             <span id="favorite-cities"></span>
-        </div>    
-<!-- **************** -->
+          </div>
+          <!-- **************** -->
           <div class="days">
             <div class="day-card">
               <div class="day-date">Day 1</div>
@@ -93,7 +101,5 @@
 
     <script src="./js/geolocation.js"></script>
     <script src="./js/favcities.js"></script>
-
   </body>
 </html>
-

@@ -1,0 +1,353 @@
+/* Responsive styles for Weather App */
+
+/* Base responsive styles for all screen sizes */
+.container {
+  min-height: 100vh;
+  height: auto;
+  padding: 10px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.weather_data {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0;
+}
+
+.card {
+  width: 95%;
+  max-width: 1200px;
+  height: auto;
+  min-height: min-content;
+  margin: 10px auto;
+  padding: 15px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.heading {
+  width: 100%;
+}
+
+.show-weather .weather-info {
+  width: 95%;
+  min-width: 500px;
+  max-width: 600px;
+  margin: 10px auto;
+  box-sizing: border-box;
+}
+
+.search-elements {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.search-elements input,
+.search-elements select,
+.search-elements button {
+  flex: 1 1 200px;
+  max-width: 300px;
+  min-width: 150px;
+  margin: 5px;
+  box-sizing: border-box;
+}
+
+.days {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.day-card {
+  flex: 1 1 250px;
+  max-width: 300px;
+  min-width: 200px;
+  margin: 5px;
+  box-sizing: border-box;
+}
+
+/* Tablet and smaller devices */
+@media screen and (max-width: 768px) {
+  .card {
+    width: 90%;
+    max-width: none;
+    margin: 15px auto;
+    padding: 15px;
+  }
+
+  .search-elements {
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .search-elements input,
+  .search-elements select,
+  .search-elements button {
+    width: 90%;
+    max-width: 300px;
+    margin: 5px 0;
+  }
+
+  #city-input {
+    font-size: 18px;
+  }
+
+  button {
+    font-size: 16px;
+  }
+
+  select {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .show-weather .weather-info {
+    width: 90%;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  .show-weather .weather-info p {
+    margin-left: 0;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .days {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .day-card {
+    width: 90%;
+    max-width: 300px;
+  }
+}
+
+/* Small tablets and large phones */
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+
+  .card {
+    width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0;
+  }
+
+  .heading h2 {
+    font-size: 24px;
+  }
+
+  .show-weather .weather-info {
+    padding: 10px;
+  }
+
+  .search-elements input,
+  .search-elements select,
+  .search-elements button {
+    width: 95%;
+    font-size: 16px;
+  }
+
+  .day-card {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .day-temperature {
+    font-size: 1.2em;
+  }
+
+  .day-description {
+    font-size: 0.9em;
+  }
+
+  /* Adjust favorite cities section */
+  .favorites-section {
+    padding: 10px;
+  }
+
+  #favorite-cities {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* Small screens and mobile devices */
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 5px;
+  }
+
+  .card {
+    width: 100%;
+    margin: 0;
+    padding: 10px 5px;
+    border-radius: 8px;
+  }
+
+  .heading h2 {
+    font-size: 1.2rem;
+    margin: 5px 0;
+  }
+
+  .show-weather .weather-info {
+    padding: 8px;
+  }
+
+  .show-weather .weather-info p {
+    font-size: 0.9rem;
+    margin: 5px 0;
+    text-align: center;
+  }
+
+  .search-elements {
+    padding: 5px;
+  }
+
+  .search-elements input,
+  .search-elements select,
+  .search-elements button {
+    flex: 1 1 100%;
+    min-width: unset;
+    font-size: 0.9rem;
+    padding: 8px;
+    margin: 3px;
+  }
+
+  .days {
+    padding: 5px;
+    gap: 8px;
+  }
+
+  .day-card {
+    flex: 1 1 100%;
+    min-width: unset;
+    padding: 10px;
+    margin: 3px;
+  }
+
+  .day-weather-icon img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .favorites-section {
+    padding: 5px;
+  }
+
+  .favorites-section h3 {
+    font-size: 1rem;
+  }
+
+  #favorite-cities {
+    font-size: 0.9rem;
+  }
+}
+
+/* Very small screens */
+@media screen and (max-width: 320px) {
+  .card {
+    padding: 5px;
+  }
+
+  .heading h2 {
+    font-size: 1.1rem;
+  }
+
+  .show-weather .weather-info p {
+    font-size: 0.85rem;
+  }
+
+  .search-elements input,
+  .search-elements select,
+  .search-elements button {
+    font-size: 0.85rem;
+    padding: 6px;
+  }
+}
+
+/* Height-based media queries */
+@media screen and (max-height: 700px) {
+  .container {
+    height: auto;
+  }
+
+  .card {
+    margin: 5px auto;
+  }
+
+  .days {
+    gap: 8px;
+  }
+
+  .day-card {
+    padding: 8px;
+  }
+}
+
+/* Ultra-small height */
+@media screen and (max-height: 500px) {
+  .container {
+    padding: 2px;
+  }
+
+  .card {
+    margin: 2px auto;
+  }
+
+  .heading h2 {
+    margin: 2px 0;
+  }
+
+  .show-weather .weather-info {
+    margin: 5px auto;
+  }
+
+  .days {
+    padding: 5px;
+    gap: 5px;
+  }
+}
+
+/* Landscape orientation adjustments */
+@media screen and (max-height: 600px) and (orientation: landscape) {
+  .container {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .card {
+    margin: 10px auto;
+  }
+
+  .days {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .day-card {
+    width: 45%;
+    max-width: 200px;
+  }
+}
